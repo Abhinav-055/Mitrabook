@@ -1,0 +1,15 @@
+{% extends 'dosti_sandesh/base.html' %}
+
+{% block content %}
+    <h1>Welcome to the login page!!</h1>
+    <h2>Enter your login Credentials</h2>
+    <form action="login_request/" method="POST">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required placeholder="Username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <p>Don't have an account?<a href={%url 'newuser'%}>Sign up here</a></p>
+{% endblock content %}

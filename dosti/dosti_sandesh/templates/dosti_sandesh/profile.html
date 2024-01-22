@@ -1,0 +1,21 @@
+{%extends 'dosti_sandesh/base.html'%}
+{%block content%}
+<div class="row">
+    <div class="column">
+        <h1> Hey there I am {{first_name}} {{last_name}}</h1>
+        <h1>My username is {{username}}</h1>
+    </div>
+    <div class= "column">
+        <h1>See {{username}}'s mitras</h1>
+    </div>
+    <div class="column">
+        <form action="{% url 'search' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="q" placeholder="Search by username" id="username">
+            <input type="hidden" name="current_user" value="{{ username }}">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</div>
+{%endblock content%}
+    

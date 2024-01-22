@@ -1,0 +1,14 @@
+{% extends 'dosti_sandesh/base.html' %}
+
+{% block content %}
+    <h1>Enter your details for your new mitrabook account!!</h1>
+    <div class="row">
+        <div class="column">
+            <form action="Newuser-registration/" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

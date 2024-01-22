@@ -1,0 +1,28 @@
+{% extends 'dosti_sandesh/base.html' %}
+{%load  static %}
+{% block content %}
+    <div class="row">
+        <div class="column">
+            <h1>
+                Welcome, {{ username }}
+            </h1>
+            <p>
+                Check out what is up with your mitras.
+            </p>
+            <a href="{% url 'chat'%}">Message your mitras</a>
+        </div>
+        <div class="column">
+            <h1>
+                Your mitras
+            </h1>
+        </div>
+        <div class="column">
+            <form action="{% url 'search' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" name="q" placeholder="Search by username" id="username">
+                <input type="hidden" name="current_user" value="{{ username }}">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </div>
+{% endblock content %}

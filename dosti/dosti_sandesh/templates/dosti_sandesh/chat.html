@@ -1,0 +1,20 @@
+{% extends 'dosti_sandesh/base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock head %}
+
+{% block content %}
+<h2>Compose Message</h2>
+<form action=/ method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <label for="sender">Sender</label>
+  <input type="text" id="sender" name="sender" required placeholder="sender username"><br><br>
+  <label for="receiver">Receiver</label>
+  <input type="text" id="receiver" name="receiver" required placeholder="receiver username"><br><br>
+  <label for="content">Message</label>
+  <input type="text" id="content" name="content" required placeholder="Message"><br><br>
+  <button type="submit">Send</button>
+</form>
+{% endblock content %}

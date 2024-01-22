@@ -1,0 +1,17 @@
+{% extends 'dosti_sandesh/base.html' %}
+
+{% block content %}
+    <div id="success-message" style="display: none;">
+        <h1>New user created successfully!</h1>
+        <p>You will be redirected to the login page in 5 seconds. If not, <a href="{% url 'login' %}">click here</a>.</p>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById('success-message').style.display = 'block';
+            setTimeout(function() {
+                window.location.href = "{% url 'login' %}";
+            }, 5000); 
+        }, 0);
+    </script>
+{% endblock content %}

@@ -1,0 +1,27 @@
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+    padding-bottom: 200px;
+    border: 1px solid #1c16d6;
+    margin: 10px;
+}
+
+#hello {
+    color: blue;
+}
+
+body {
+    background-color: black;
+    color: rgba(227, 8, 239, 0.923); 
+}
+
+img {
+    width: 100px !important;
+    height: auto !important;
+}
+
+

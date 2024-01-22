@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MITRABOOK: Your place to find mitras</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="row">
+        <img src='/static/img/MITRABOOK_LOGO-transformed.png'>
+        <h1 id="hello">MITRABOOK.COM</h1>
+    </div>
+    {% block content %}
+
+    {% endblock content %} 
+    <footer>
+        <p>Copyright: Abhinav Anand</p>
+    </footer>
+</body>
+</html>
